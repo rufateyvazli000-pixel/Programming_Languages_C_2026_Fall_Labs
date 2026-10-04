@@ -1,7 +1,7 @@
 /*
  * Lab 3, Task 1
- * Name: <your name>
- * Student ID: <your student ID>
+ * Name: <Rufat Eyvazli>
+ * Student ID: <251ADB127>
  *
  * Implement array algorithms:
  *   - find minimum value
@@ -41,34 +41,47 @@ int array_sum(int arr[], int size);
 float array_avg(int arr[], int size);
 
 int main(void) {
-    int arr[] = {10, 20, 5, 30, 15};
-    int size = 5;
+  int arr[] = {10, 20, 5, 30, 15};
+  int size = 5;
 
-    printf("Min: %d\n", array_min(arr, size));
-    printf("Max: %d\n", array_max(arr, size));
-    printf("Sum: %d\n", array_sum(arr, size));
-    printf("Avg: %.2f\n", array_avg(arr, size));
+  printf("Min: %d\n", array_min(arr, size));
+  printf("Max: %d\n", array_max(arr, size));
+  printf("Sum: %d\n", array_sum(arr, size));
+  printf("Avg: %.2f\n", array_avg(arr, size));
 
-    return 0;
+  return 0;
 }
 
 // Implement functions below
 int array_min(int arr[], int size) {
-    // TODO: return smallest element
-    return 0; // placeholder
+  int smallest = arr[0];
+  for (int idx = 1; idx < size; ++idx) {
+    if (arr[idx] < smallest) {
+      smallest = arr[idx];
+    }
+  }
+  return smallest;
 }
 
 int array_max(int arr[], int size) {
-    // TODO: return largest element
-    return 0; // placeholder
+  int largest = arr[0];
+  for (int idx = 1; idx < size; ++idx) {
+    if (arr[idx] > largest) {
+      largest = arr[idx];
+    }
+  }
+  return largest;
 }
 
 int array_sum(int arr[], int size) {
-    // TODO: return sum of elements
-    return 0; // placeholder
+  int accumulated = 0;
+  for (int idx = 0; idx < size; ++idx) {
+    accumulated += arr[idx];
+  }
+  return accumulated;
 }
 
 float array_avg(int arr[], int size) {
-    // TODO: return average as float (avoid integer division)
-    return 0.0f; // placeholder
+  float final_sum = (float)array_sum(arr, size);
+  return final_sum / (float)size;
 }
